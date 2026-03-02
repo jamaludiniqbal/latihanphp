@@ -1,8 +1,10 @@
 <?php
 
+// include "function.php"; //include is used to include the contents of another file into the current file. It allows you to reuse code and organize your project into multiple files. When the include statement is encountered, the specified file is read and its contents are inserted into the current file at that point. This can be useful for including functions, classes, or other reusable code that you want to use across multiple files in your project.
 
 require_once "function.php"; //require_once is similar to include, but it will only include the specified file once. If the file has already been included, it will not be included again. This can be useful to prevent errors that may occur if the same file is included multiple times, such as redeclaration of functions or classes. If the file cannot be found, require_once will produce a fatal error and stop the execution of the script, while include will only produce a warning and continue executing the script.
 
+//the best option is to use require_once because it will prevent errors that may occur if the same file is included multiple times, such as redeclaration of functions or classes. If the file cannot be found, require_once will produce a fatal error and stop the execution of the script, while include will only produce a warning and continue executing the script. This can help to ensure that your code is more robust and less prone to errors
 
 // 2 ways to define arrays (use square brackets)
 // $things = array(1,2,3,4);
