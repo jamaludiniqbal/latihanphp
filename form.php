@@ -91,13 +91,53 @@ function  displayCheckboxList(array $array, string $name = "", array $defaultVal
         HTML;
     }
 }
-echo "</br>";
-displaySelectList($countries, "country", "CA");
+?>
 
-echo "</br>";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form action="form.php" method="post">
+<fieldset>
+    <legend>Countries</legend>
+        <p>
+    <?php displaySelectList($countries, "country1", "CA"); ?>
+</p>
+<p>
+<?php displayRadioList($countries, "country2", "CA"); ?>
+</p>
+<p>
+    <?php displayCheckboxList($countries, "countryCheckbox", ["CA", "MX"]); ?>
+</p>
 
-displayRadioList($countries, "country", "CA");
+<button type="submit">
+    <span>Submit</span>
+
+</button>
 
 
-echo "</p>";
-displayCheckboxList($countries, "country", ["CA", "MX"]);
+</fieldset>
+
+
+
+    </form>
+<pre>
+<?php
+
+    // print_r($_POST);
+    // print_r($_GET);
+    // print_r($_REQUEST);
+
+    //conditional operator (ternary operator) is a shorthand way of writing an if-else statement. It takes three operands: a condition, a value to return if the condition is true, and a value to return if the condition is false. The syntax is as follows: condition ? value_if_true : value_if_false.
+    $countries = $_GET['countryCheckbox'] ?? null;
+
+    var_dump($countries);
+?>
+</pre>
+
+</body>
+</html>

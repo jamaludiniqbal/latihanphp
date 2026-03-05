@@ -182,6 +182,16 @@ $animals = ["dog", "cat", "mouse", "hamster", "turtle", "frog", "snake", "lizard
     <p>
         <?php displaySelectList($countries, "country", "NZ"); ?>
     </p>
+<p>
+<?php displayRadioList($countries, "country", "CA"); ?>
+</p>
+    
+<p>
+    
+</p>
+
+
+
 </body>
 
 </html>
